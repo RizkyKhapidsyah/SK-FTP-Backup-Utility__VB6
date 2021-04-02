@@ -1,0 +1,9 @@
+                      FTP Server Data
+
+Server Address - Enter the address of the FTP server that you wish connect to. An example is: ftp.myserver.com
+
+User - Enter your user name on the above specified server.
+
+Password - Enter your password for the above specified user.
+
+Index Name - The default name for the index file created and maintained in each local and remote directory in which files are transferred. "bacindex" (with no extension) has been suggested by the author of this program.

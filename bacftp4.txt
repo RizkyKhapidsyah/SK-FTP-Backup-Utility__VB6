@@ -1,0 +1,13 @@
+                                 Transfer Types
+
+Files may be transferred via FTP either as ASCII (text type) or as BINARY. If the wrong method is choosen your file may be corrupted. Generally FTP utilities will make that determination for you based on file types which is in turn determined by the file extension.
+
+You may enter such extensions in the left textbox and as you press [Enter] they will be added to the listbox below. Enter only the expected ASCII type file extensions here. All other type files will be transferred as BINARY.
+
+Note you may just press [Enter] to place a blank line in the listbox. Thus files with no extensions would be transferred as ASCII.
+
+If you click on an item in the listbox, it will be deleted. Items are saved when you exit (Clicking OK or X). If you click "Cancel" then nothing you have done will be saved (and you will exit).
+
+You might have a file with an ASCII file type extension that you want to transfer as BINARY or vice versa. In such a case enter the specific filename (like: sample.cl) in the right textbox, and it will be transferred in the opposite manner.
+
+Make a controlled test of backup and restore (from local and remote test directories) to be certain of your transfer types.

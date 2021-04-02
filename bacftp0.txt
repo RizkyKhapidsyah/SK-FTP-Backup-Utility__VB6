@@ -1,0 +1,42 @@
+                               FTP Backup Program
+
+Scenario: You have decided to use your FTP server to upload your valued files for backup purposes. But it would save time to backup just those files which have been modified or created since the last backup.
+
+Problem: The date of the file on the FTP server is the date it was transferred, not the date last modified.
+
+Solution: Create and maintain an index file of file names and dates.
+
+                              Specific Instructions
+
+Backup/Restore Menu Item
+Change between modes of operation. Restore will download previously backed up files.
+
+Settings Menu Item
+Enter the information to connect to your FTP server.
+
+Commands Menu Item
+Specify the local files you wish to backup with normal file search wildcards and associate those files with a remote directory.
+
+Types Menu Item
+Files are transferred either as ASCII or BINARY. Specify your types here.
+
+Automatic/Manual Menu Item
+Toggles manner of operation. Manual will pause between commands for your perusal.
+
+
+                                      Operations
+
+A file index is stored in the remote directory to keep track of the file modification dates of the local files as they are transferred. From this data a subsequent FTP upload is performed only for those files that have been modified or newly created.
+
+If a file has been restored then its file date (date of transfer) will be greater than its modification date. To ensure that this restored file will not be uploaded on a subsequent backup, a local index is also maintained with the restore/download date. If there is a local index entry for a local file to be uploaded, then the determination for upload is the comparison of the actual local file date with the local index date rather than with the remote index date.
+
+Also in the local index is the modification date (transferred from the remote index) so there are two dates per item in the local index. For subsequent restore/download if there is an entry for the remote file in the local index, then the comparison is between the remote index date and the local index modification date.
+
+
+                           PROGRAMMING NOTES
+
+1. Most FTP servers are case sensitive which means that sample.txt and Sample.txt are two files on the server. In this program all file names are converted to lower case to avoid duplications.
+
+2. Files may be restored/downloaded only if they have been previously backedup/uploaded by this program. The test is the remote files requested are in the remote index file. This means if a file is placed in the remote directory by a means other than an upload from this program it will not be restored/downloaded.
+
+3. This utility may also be used to backup and restore files by copying them to another drive, such as in a network setting or a floppy. To obtain this functionality the FTP transfer API's (BacFTP1.bas) must be replaced with file transfer functions (BacFTP3.bas). This alternate code module was used for development and probably should not be employed in favor of a backup utility that will conserve the file dates (with the filecopy statement).

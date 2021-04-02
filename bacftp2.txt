@@ -1,0 +1,19 @@
+                                     Command Strings
+
+The command strings designate which files you wish to upload (the left textbox) and in which directory on your FTP server you wish to place them (the right textbox).
+
+Enter a complete filespec with path in the left textbox like: "c:\data\myfile.bas" (without the quotes) If you want to upload all the "bas" files in the data directory then your entry would be: "c:\data\*.bas"
+
+To aid in the entry of this filespec you may search for a specific file by clicking Search (then edit the result if wildcards are desired).
+
+Enter the remote (FTP server) directory in the right textbox like: "html_public/backup/data"
+
+Then click AddNew to add your text entries as a new command.
+
+To select a previously entered command string for edit or deletion, merely click on it in the listbox. Then click Delete or Edit (after editing the text).
+
+Clicking Clear just clears the textboxes.
+
+Items are saved when you exit (Clicking OK or X). If you click "Cancel" then nothing you have done will be saved (and you will exit).
+
+Note that processes are reversed for the restore mode moving files from the remote location designated in the right textbox to the local location in the left textbox. With the slight adjustment that files matching your wildcard filespec portion in the left textbox will be searched for in the remote directory and downloaded to the path portion of the local location in the left textbox.
